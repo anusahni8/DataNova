@@ -8,13 +8,23 @@ A consolidated repository for DataNova's website and AI Interview Studio.
 
 ## Local run
 ```bash
-cd projects/ai-interview
 npm install
 cp .env.example .env
 npm start
 ```
 
-Open `http://localhost:3000/datanova-ai-interview.html` if serving the original root, or adapt static hosting as needed.
+Open `http://localhost:3000/`.
+
+## Vercel deployment
+
+Import this repository into Vercel with the project root set to the repository root. Vercel will serve `index.html` and deploy `api/evaluate.js` as the `/api/evaluate` function.
+
+Add these environment variables in the Vercel project settings:
+
+- `OPENAI_API_KEY` — the server-side OpenAI API key
+- `OPENAI_MODEL` — optional model override
+
+No API key is required in the browser; it must remain a server-side Vercel environment variable.
 
 ## GitHub
 Set the repository URL and run:
